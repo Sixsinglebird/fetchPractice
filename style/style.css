@@ -1,0 +1,14 @@
+
+header {
+    display: flexbox;
+    padding: 8px 16px;
+};
+
+#title {
+    font-size: 64px;
+    display: inline;
+    color: rgb(148, 211, 89);
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: black;
+};
+
