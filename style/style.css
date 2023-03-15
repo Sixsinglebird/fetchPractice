@@ -1,14 +1,48 @@
+body {
+    background-color: antiquewhite;
+    padding: 0px;
+    margin: 0px;
+}
 
 header {
-    display: flexbox;
+    display: flex;
+    background-color:black;
+    margin: 0px;
     padding: 8px 16px;
-};
-
-#title {
     font-size: 64px;
-    display: inline;
-    color: rgb(148, 211, 89);
-    -webkit-text-stroke: 2px;
-    -webkit-text-stroke-color: black;
-};
+    color: orange
+}
 
+nav {
+    display: inline;
+    margin-left: auto;
+}
+
+button {
+    margin: 8px;
+}
+
+li {
+    margin-top: 4px;
+    font-size: 24px;
+}
+
+#display {
+    display: flex;
+    padding: 8px;
+}
+ul {
+    margin-left: auto;
+    margin-right: auto;
+}
+figure {
+    width: 36%;
+    display: inline;
+}
+img {
+    width: 300px;
+}
+
+#login {
+    display:block;
+}

@@ -1,27 +1,32 @@
 // i want to make a website to practice handling data
 function loadAPT(){
-    let xmr = new XMLHttpRequest();
-    let output = ""
-    xmr.open("GET","https://reqres.in/api/users")
-    xmr.onload = function(){
-        if (xmr.status === 200){
-            let data = JSON.parse(xmr.responseText).data;
-            let profiles = document.createElement("ul");
-            data.forEach(function(user){
-                let li = document.createElement("li");
-                let profile = `<img src=${user.avatar}>`;
-                li.innerHTML = profile
-                profiles.appendChild(li);
-                
-            });
-            output += profiles;
-            document.querySelector("#profiles").innerHtml = output;
-        } else {
-            alert("error code received");
-        };
-        
-    };
-xmr.send()
+  let url = "https://api.github.com/users";
+  let response = fetch(url).then(
+   (response) => response.json()
+ ).then(
+   (users) => {
+    users.forEach((user => {
+      console.log(user)
+      var output = `<figure><h3 id="login">${user.login}</h3><img src= "${user.avatar_url}"></figure>`;
+      document.querySelector("#profiles").innerHTML += output+"<br>";
+    }))
+  });
 };
 
-loadAPT();
+function chuckNorrisJoke(){
+   let url = "https://api.chucknorris.io/jokes/random";
+   fetch(url).then(
+    (response) => response.json()
+  ).then(
+    (joke) => {
+        console.log(joke.value+"<br>");
+    });
+};
+
+//  chuck norris joke
+let chuck = document.querySelector("#chuckNorris");
+chuck.addEventListener("click",chuckNorrisJoke);
+
+window.onload = () => {
+  loadAPT();
+}
