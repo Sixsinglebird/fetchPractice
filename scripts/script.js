@@ -12,7 +12,6 @@ function loadAPT() {
 }
 
 function idSearch(value) {
-  alert(value);
   let url = "https://api.github.com/users";
   fetch(url)
     .then((response) => response.json())
@@ -20,7 +19,7 @@ function idSearch(value) {
       users.forEach((user)=>{
         if (value == user.id) {
           let output = `<div  class="profile"><img src= "${user.avatar_url}"><h3 id="login">${user.login}</h3><br><ul id="details"><li>id: ${user.id}</li><li>page: <a href="${user.html_url}">${user.html_url}</a></li></ul></div>`;
-          document.querySelector("#searched").innerHTML = output;
+          document.querySelector("#searched").innerHTML += output;
         };  
       });
     });
