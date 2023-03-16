@@ -80,3 +80,6 @@ nav {
   display: inline;
 }
 
+html {
+  min-width: 900px;
+}
